@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "SRI"
+date:   2021-10-12 22:33:29 +0200
+categories: jekyll update
+---
+
+![Imagen](https://www.ymant.com/wp-content/uploads/REDES-YMANT.jpg)
+
+
+## Prácticas realizadas:

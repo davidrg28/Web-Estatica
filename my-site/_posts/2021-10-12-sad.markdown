@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "SAD"
+date:   2021-10-12 22:33:29 +0200
+categories: jekyll update
+---
+
+![Imagen](https://smartgroupcloud.com/wp-content/uploads/2019/04/Seguridad-inform%C3%A1tica-1.jpg)
+
+## Prácticas realizadas:

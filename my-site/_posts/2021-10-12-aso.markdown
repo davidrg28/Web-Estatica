@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "ASO"
+date:   2021-10-12 22:33:29 +0200
+categories: jekyll update
+---
+
+![Imagen](https://www.colexio-karbo.com/wp-content/uploads/2018/02/red2.jpg)
+
+## Prácticas realizadas:
+
+- [Instalación Debian 11 LVM]({% post_url 2021-10-12-practicaaso %})

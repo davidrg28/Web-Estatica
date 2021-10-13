@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "IAW"
+date:   2021-10-12 22:33:29 +0200
+categories: jekyll update
+---
+
+![Imagen](https://www.sagrado.edu/wp-content/uploads/bb-plugin/cache/Desarrollo-Aplicaciones-Web-panorama.jpg)
+
+## Prácticas realizadas:

@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "BBDD"
+date:   2021-10-12 22:33:29 +0200
+categories: jekyll update
+---
+
+![Imagen](https://dinahosting.com/blog/cont/uploads/2019/04/Bases-de-datos3.jpg)
+
+## Prácticas realizadas
