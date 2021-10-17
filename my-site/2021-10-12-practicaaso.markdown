@@ -5,6 +5,9 @@ date:   2021-10-12 22:33:29 +0200
 categories: jekyll update
 ---
 
+***Parte editada por Davidrg para la tarea***
+
+
 # Instalación de Debian 11 en el equipo de trabajo
 ## Primeros pasos
 
