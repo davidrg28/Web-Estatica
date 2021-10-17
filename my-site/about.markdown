@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Presentación a
+title: Presentación
 permalink: /about/
 ---
 
-Hola, Esta página web se ha realizado con Jekyll y ha sido desplegada en Render, podeís encontrar los ficheros utilizados para su configuración en mi repositorio de [github.com](https://github.com/Daniel-164/Web-Estatica)
+Esta página web se ha realizado con Jekyll y ha sido desplegada en Render, podeís encontrar los ficheros utilizados para su configuración en mi repositorio de [github.com](https://github.com/Daniel-164/Web-Estatica)
 
 Podeís encontrar información sobre Jekyll aquí:
 [Página web de Jekyll](https://jekyllrb.com/)
