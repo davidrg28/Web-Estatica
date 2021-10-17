@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Instalación de Debian 11 en el equipo de trabajo | Página de Danielpg</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Instalación de Debian 11 en el equipo de trabajo" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Instalación de Debian 11 en el equipo de trabajo Primeros pasos" />
+<meta property="og:description" content="Instalación de Debian 11 en el equipo de trabajo Primeros pasos" />
+<link rel="canonical" href="http://localhost:4000/jekyll/update/2021/10/12/practicaaso.html" />
+<meta property="og:url" content="http://localhost:4000/jekyll/update/2021/10/12/practicaaso.html" />
+<meta property="og:site_name" content="Página de Danielpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-10-12T22:33:29+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Instalación de Debian 11 en el equipo de trabajo" />
+<script type="application/ld+json">
+{"description":"Instalación de Debian 11 en el equipo de trabajo Primeros pasos","@type":"BlogPosting","headline":"Instalación de Debian 11 en el equipo de trabajo","dateModified":"2021-10-12T22:33:29+02:00","datePublished":"2021-10-12T22:33:29+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/jekyll/update/2021/10/12/practicaaso.html"},"url":"http://localhost:4000/jekyll/update/2021/10/12/practicaaso.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Página de Danielpg" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Página de Danielpg</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">Presentación</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Instalación de Debian 11 en el equipo de trabajo</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-10-12T22:33:29+02:00" itemprop="datePublished">Oct 12, 2021
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="instalación-de-debian-11-en-el-equipo-de-trabajo">Instalación de Debian 11 en el equipo de trabajo</h1>
+<h2 id="primeros-pasos">Primeros pasos</h2>
+
+<p>En la siguiente tarea realizaremos una instalación de la última versión de Debian, la 11 (Bullseye), realizaremos la típica instalación, exceptuando los volúmenes lógicos, por lo que omitiremos los típicos pasos.</p>
+
+<p>Debemos seguir la siguiente estructura de directorios, ya que deseamos configurar nuestra máquina linux como un servidor.
+Disponemos de unos 250 GB por lo que realizaremos el reparto de espacio de la siguiente manera:</p>
+
+<ul>
+  <li>/ → 30GB</li>
+  <li>/home → 100GB</li>
+  <li>/var → 50GB</li>
+  <li>/usr → 8GB</li>
+  <li>/tmp → 2GB</li>
+</ul>
+
+<p>Nos sobran unos 11 GB para repartir en un futuro en caso de necesitar más espacio.</p>
+
+<p>##Configuración LVM</p>
+
+<p>Una vez realizadas las distintas particiones pasaremos a la configuración de los volúmenes lógicos.</p>
+
+<p>Debemos crear un grupo de volúmenes, posteriormente crearemos un volúmen lógico con el nombre de una partición, por ejemplo, creamos un volúmen lógico llamado home y a este le asignamos la partición de home. Debemos hacer esto con todas las particiones, es decir, con /, /home, /var, /usr y /tmp.</p>
+
+<p>A la hora de seleccionar el entorno de escritorio debian, debemos seleccionar la opción “ssh_server”, ya que lo utilizaremos bastante a la hora de acceder a otras máquinas.</p>
+
+<p>Salida del comando lsblk una vez finalizada la instalación:
+<img src="https://dit.gonzalonazareno.org/redmine/attachments/download/32599/lsblk.png" alt="Imagen" /></p>
+
+<h2 id="drivers">Drivers</h2>
+
+<p>Es muy probable que cuando terminemos la instalación de nuestro sistema, nos de algún problema relacionado con los drivers del equipo.
+Para solucionar esto debemos introducir el siguiente comando:</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ sudo -E hw-probe -all -upload</code></p>
+
+<p>Este comando nos mostrará un enlace que debemos escribir en la página “Linux Hardware” y nos mostrará los problemas relacionados con los drivers de nuestro equipo.
+En mi caso, tuve problema con el driver del wi-fi, para solucionarlo descargue dicho driver que es el siguiente:
+iwlwifi-2030-6.ucode
+Una vez descargado lo copiamos en la carpeta /lib/firmware, posteriormente realizamos un update y un upgrade. Reiniciamos el equipo y ya se soluciona.</p>
+
+  </div><a class="u-url" href="/jekyll/update/2021/10/12/practicaaso.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Página de Danielpg</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Página de Danielpg</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/Daniel-164"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">Daniel-164</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>En esta página podemos encontrar diferentes posts, está pagina se ha realizado en Jekyll.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
