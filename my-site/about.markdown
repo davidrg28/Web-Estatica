@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Presentación 
+title: Presentación a
 permalink: /about/
 ---
 
